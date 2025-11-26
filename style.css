@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #000;
+    color: #fff;
+}
+
+@font-face {
+    font-family: sf;
+    src: url(./fonts/SF-PRO.TTF);
+}
+
+#main {
+    font-family: sf;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#ellipse {
+    position: absolute;
+    top: -50%;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 50%,
+            #0038FF 0%,
+            #000F76 100%);
+    filter: blur(250px);
+    border-radius: 50%;
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+.pattern {
+    user-select: none;
+    width: 100%;
+    max-height: 100vh;
+    position: absolute;
+    z-index: 2;
+}
+
+.hero {
+    position: relative;
+    padding: 30px;
+    z-index: 10;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.navbar {
+    display: flex;
+    background-image: url("./assets/glass.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-size: 100% 100%;
+    padding: 15px 30px;
+    gap: 32px;
+}
+
+.navbar p {
+    font-size: 16px;
+}
+
+.button,
+.button2 {
+    display: inline-flex;
+    padding: 12px 28px;
+    border-radius: 36px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+}
+
+.button {
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 15, 118, 1);
+    background-color: #0038FF;
+    transition: all 0.3s ease;
+}
+
+.button2 {
+    box-shadow: 0px 4px 4px #494949;
+    color: #000;
+    background-color: #FFFFFF;
+}
+
+.button2:hover {
+    transform: translateY(-4px);
+}
+
+.button:hover {
+    transform: translateY(-4px);
+}
+
+.button p {
+    user-select: none;
+    font-size: 15px;
+}
+
+.main-content {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.main-content h1 {
+    font-size: 64px;
+    line-height: 80%;
+    letter-spacing: -2px;
+}
+
+.main-content p {
+    font-size: 16px;
+    width: 500px;
+}
+
+.div-btn {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.principles {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.tittle {
+    font-size: 10px;
+    padding: 8px 12px;
+    background-color: #101218;
+    border-radius: 24px;
+}
+
+.cards-container {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 260px;
+    height: 300px;
+    padding: 30px;
+    background: linear-gradient(#080808 0%,
+            #101218 100%);
+    border-radius: 36px;
+    text-align: center;
+}
+
+.card .texts {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.card .texts h2 {
+    font-size: 16px;
+}
+
+.card .texts p {
+    color: #AAAAAA;
+    font-weight: 100;
+    font-size: 10px;
+}
+
+.purpose {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    justify-content: center;
+    text-align: center;
+}
+
+.purpose h1 {
+    font-size: 64px;
+    line-height: 80%;
+    letter-spacing: -2px;
+}
+
+.purpose p {
+    color: #AAAAAA;
+    font-size: 16px;
+    width: 650px;
+}
+
+.footer {
+    /* width: 100%; */
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+.footer .links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
