@@ -9,9 +9,9 @@ const box = document.querySelector(".card-container");
 
 function updateContent(e) {
     if (e.matches) {
-        box.innerHTML = `<img src="./assets/Cards (1).svg" alt="cards">`;
+        box.innerHTML = `<img src="./assets/Cards (6).svg" alt="cards">`;
     } else {
-        box.innerHTML = `<img src="./assets/Cards.svg" alt="cards">`;
+        box.innerHTML = `<img src="./assets/Cards (5).svg" alt="cards">`;
     }
 }
 
