@@ -296,26 +296,107 @@ body {
         background-color: #fff;
     }
 
+    /* -------------------------------
+   MOBILE MENU (PRO)
+--------------------------------*/
     .menu-overlay {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: center;
-        text-align: end;
         position: fixed;
         top: 0;
-        left: -100%;
-        height: 100vh;
+        left: 100%;
         width: 100vw;
-        background-color: #000;
+        height: 100vh;
+        background: #0b0d16;
         z-index: 999;
-        gap: var(--space-5);
-        padding: 0 30px;
+
+        display: flex;
+        justify-content: center;
     }
 
-    .menu-overlay a {
-        font-size: var(--fs-xl);
-        text-align: end;
+    .menu-overlay-inner {
+        width: 100%;
+        padding: 32px 28px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* Top */
+    .menu-overlay-top {
+        font-size: 12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        opacity: 0.6;
+        color: #fff;
+    }
+
+    .menu-overlay-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Close button */
+    .menu-close {
+        width: 36px;
+        height: 36px;
+        background: none;
+        border: none;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .menu-close span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        transform-origin: center;
+    }
+
+    .menu-close span:first-child {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .menu-close span:last-child {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .menu-close:hover {
+        opacity: 0.8;
+    }
+
+    /* Links */
+    .menu-links {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .menu-links a {
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: #fff;
+        opacity: 0.9;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .menu-links a:hover {
+        opacity: 1;
+        transform: translateX(4px);
+    }
+
+    .menu-links a.active {
+        color: var(--color-primary);
+        opacity: 1;
+    }
+
+    /* Footer */
+    .menu-overlay-footer {
+        font-size: 13px;
+        opacity: 0.5;
         color: #fff;
     }
 
