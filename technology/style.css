@@ -1,0 +1,320 @@
+:root {
+    --color-bg: #f7f9fc;
+    --color-text: #0f1222;
+    --color-primary: #1a4cff;
+
+    --color-glass-bg: rgba(255, 255, 255, 0.65);
+    --color-glass-border: rgba(15, 18, 34, 0.08);
+    --color-pill-bg: #eef2ff;
+
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-8: 48px;
+    --space-9: 60px;
+    --space-10: 80px;
+
+    --radius-md: 24px;
+    --radius-pill: 50px;
+
+    --glass-shadow: 0 10px 40px rgba(15, 18, 34, 0.08);
+
+    --container-width: 80%;
+}
+
+/* -------------------------------
+           RESET
+        --------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: sf-pro;
+    src: url(../fonts/SF-PRO.TTF);
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: sf-pro;
+    overflow-x: hidden;
+}
+
+/* -------------------------------
+           HEADER
+        --------------------------------*/
+.header {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.nav {
+    display: flex;
+    gap: var(--space-5);
+}
+
+.nav a {
+    font-size: 14px;
+    color: var(--color-text);
+    opacity: 0.85;
+    transition: 0.3s;
+}
+
+.nav a:hover,
+.nav .active {
+    color: var(--color-primary);
+}
+
+.btn {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+/* -------------------------------
+           TECHNOLOGY SECTION
+        --------------------------------*/
+.technology {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: var(--space-10) 0;
+}
+
+.technology-inner {
+    width: var(--container-width);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-9);
+}
+
+.pill {
+    width: fit-content;
+    padding: 6px 14px;
+    font-size: 13px;
+    border-radius: var(--radius-pill);
+    background: var(--color-pill-bg);
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.tech-head {
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.tech-head h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.05;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.tech-head p {
+    font-size: 16px;
+    opacity: 0.75;
+    line-height: 1.6;
+}
+
+/* TECH GRID */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+.tech-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    background: var(--color-glass-bg);
+    border: 1px solid var(--color-glass-border);
+    backdrop-filter: blur(18px);
+    box-shadow: var(--glass-shadow);
+    transition: transform 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-6px);
+}
+
+.tech-card h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.tech-card p {
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 1.6;
+}
+
+/* SECURITY STACK */
+.security-stack {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+.stack-item {
+    padding: var(--space-6);
+    border-left: 3px solid var(--color-primary);
+    border-radius: 16px;
+
+    background: linear-gradient(180deg,
+            rgba(26, 76, 255, 0.06),
+            rgba(255, 255, 255, 0.65));
+
+    box-shadow:
+        0 12px 30px rgba(26, 76, 255, 0.14),
+        0 1px 0 rgba(26, 76, 255, 0.18) inset;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stack-item:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 22px 45px rgba(26, 76, 255, 0.22),
+        0 1px 0 rgba(26, 76, 255, 0.22) inset;
+}
+
+.stack-item h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.stack-item p {
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 1.6;
+}
+
+/* -------------------------------
+           FOOTER
+        --------------------------------*/
+.footer {
+    padding: var(--space-9) 0;
+    margin-top: var(--space-10);
+    display: flex;
+    justify-content: center;
+    background: var(--color-glass-bg);
+    border-top: 1px solid var(--color-glass-border);
+    backdrop-filter: blur(18px);
+}
+
+.footer-inner {
+    width: var(--container-width);
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.col h3 {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.col a {
+    font-size: 14px;
+    color: var(--color-text);
+    opacity: 0.8;
+}
+
+/* -------------------------------
+           RESPONSIVE
+        --------------------------------*/
+@media (max-width: 768px) {
+
+    .nav,
+    .btn {
+        display: none;
+    }
+
+
+.menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-3);
+        overflow: hidden;
+    }
+
+    .menu hr {
+        height: 1px;
+        width: 30px;
+        background-color: #fff;
+    }
+
+    .menu-overlay {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        text-align: end;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 100vw;
+        background-color: #000;
+        z-index: 999;
+        gap: var(--space-5);
+        padding: 0 30px;
+    }
+
+    .menu-overlay a {
+        font-size: var(--fs-xl);
+        text-align: end;
+        color: #fff;
+    }
+
+
+    .technology {
+        padding: var(--space-8) 0;
+    }
+
+    .technology-inner,
+    .footer-inner {
+        width: 90%;
+    }
+
+    .tech-grid,
+    .security-stack {
+        grid-template-columns: 1fr;
+    }
+
+    .stack-item {
+        border-left: none;
+        border-top: 3px solid var(--color-primary);
+    }
+}
+
+
+.menu-overlay .active {
+    color: var(--color-primary);
+}
