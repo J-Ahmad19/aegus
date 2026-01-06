@@ -1,0 +1,274 @@
+/* -------------------------------
+   DESIGN SYSTEM
+--------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    /* COLORS */
+    --color-bg: #f7f9fc;
+    /* soft white */
+    --color-text: #0f1222;
+    /* deep navy text */
+    --color-primary: #1a4cff;
+    /* rich blue */
+
+    --color-glass-bg: rgba(255, 255, 255, 0.65);
+    --color-glass-border: rgba(15, 18, 34, 0.08);
+    --color-pill-bg: #eef2ff;
+
+    --header-bg: #ffffff;
+
+    /* SPACING (8px scale) */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 40px;
+    --space-8: 48px;
+    --space-9: 60px;
+    --space-10: 80px;
+
+    /* FONT SIZES */
+    --fs-xs: 10px;
+    --fs-sm: 14px;
+    --fs-md: 16px;
+    --fs-lg: 1rem;
+    --fs-xl: 2rem;
+    --fs-xxl: 4rem;
+
+    /* RADII */
+    --radius-pill: 50px;
+    --radius-lg: 30px;
+    --radius-md: 24px;
+    --radius-sm: 12px;
+
+    /* BLUR */
+    --blur-hero: blur(24px) saturate(1.2);
+    --blur-footer: blur(22px) saturate(1.2);
+
+    /* SHADOW (lighter, cleaner) */
+    --glass-shadow: 0 10px 40px rgba(15, 18, 34, 0.08);
+
+    /* LAYOUT */
+    --container-width: 80%;
+}
+
+/* -------------------------------
+   RESET
+--------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: sf-pro;
+    src: url(/fonts/SF-PRO.TTF);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: sf-pro, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    overflow: hidden;
+}
+
+.signup-card {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    padding-top: 40px;
+}
+
+img {
+    padding-top: 40px;
+    width: 120px;
+    height: auto;
+    margin-bottom: 32px;
+    display: block;
+    align-self: flex-start;
+}
+
+.page-container {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-container img {
+    position: absolute;
+    top: 40px;      
+    left: 40px;     
+    width: 120px;   
+    height: auto;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+    color: #1a4cff;
+}
+
+  .subtitle {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 32px;
+    text-transform: lowercase;
+}
+
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 24px;
+    background: white;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.social-btn:hover {
+    background: #f9f9f9;
+}
+
+.divider {
+    position: relative;
+    text-align: center;
+    margin: 32px 0;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #eee;
+    z-index: 1;
+}
+
+.divider span {
+    position: relative;
+    z-index: 2;
+    background: white;
+    padding: 0 12px;
+    color: #aaa;
+    font-size: 11px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: #000;
+}
+
+input::placeholder {
+    color: #ccc;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: opacity 0.2s;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+.footer-text {
+    margin-top: 32px;
+    text-align: center;
+}
+
+.footer-text p {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 8px;
+}
+
+.signin-link {
+    font-size: 12px;
+    font-weight: 700;
+    color: #000;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .halftone-bg {
+      display: none;
+    }
+    .content-wrapper {
+      justify-content: center;
+      padding: 20px;
+    }
+}
