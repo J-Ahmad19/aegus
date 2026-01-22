@@ -76,5 +76,54 @@
   </div>
 </div>
 
+<script>
+  // Handle registration form submission
+  document.querySelector('.signup-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const fullName = this.querySelector('input[type="text"]').value;
+    const email = this.querySelector('input[type="email"]').value;
+    const password = this.querySelector('input[type="password"]').value;
+    const confirmPassword = this.querySelectorAll('input[type="password"]')[1].value;
+    
+    // Basic validation
+    if (!fullName || !email || !password || !confirmPassword) {
+      alert('Please fill in all fields');
+      return;
+    }
+    
+    if (password !== confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    }
+    
+    // TODO: Send registration data to your backend API
+    // const response = await fetch('/api/register', {
+    //   method: 'POST',
+    //   body: JSON.stringify({ fullName, email, password })
+    // });
+    
+    // On successful registration, create session and redirect to payment
+    localStorage.setItem('userSession', 'active');
+    localStorage.setItem('userEmail', email);
+    localStorage.setItem('registrationDate', new Date().toISOString());
+    
+    // Redirect to payment page
+    window.location.href = '/payment/index.html';
+  });
+  
+  // Handle social login buttons
+  document.querySelectorAll('.social-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      // TODO: Implement OAuth with Google/Apple
+      // After successful OAuth:
+      // localStorage.setItem('userSession', 'active');
+      // localStorage.setItem('userEmail', socialEmail);
+      // window.location.href = '/payment/index.html';
+    });
+  });
+</script>
+
 </body>
 </html>
