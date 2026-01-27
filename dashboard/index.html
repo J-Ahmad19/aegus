@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .download-page { display:flex; align-items:center; justify-content:center; min-height: 100vh; }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="download-page">
+            <button id="download-btn" class="action-btn">Download App</button>
+        </div>
+    </div>
+
+    <script>
+        // Security: allow only logged-in and paid users
+        function checkPaymentStatus() {
+            const userSession = localStorage.getItem('userSession');
+            if (!userSession) {
+                window.location.href = '/signin/signin/index.html';
+                return;
+            }
+            const paymentStatus = localStorage.getItem('paymentStatus');
+            if (!paymentStatus || paymentStatus !== 'completed') {
+                window.location.href = '/payment/index.html';
+                return;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            checkPaymentStatus();
+            const btn = document.getElementById('download-btn');
+            btn.addEventListener('click', () => {
+                // TODO: Replace with actual app download URL or API route
+                window.location.href = '/api/download-app';
+            });
+        });
+    </script>
+</body>
+</html>

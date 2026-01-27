@@ -1,0 +1,299 @@
+/* Dashboard Styles */
+
+/* Import design system from main styles */
+:root {
+    /* COLORS */
+    --color-bg: #f7f9fc;
+    --color-text: #0f1222;
+    --color-primary: #1a4cff;
+    --color-glass-bg: rgba(255, 255, 255, 0.65);
+    --color-glass-border: rgba(15, 18, 34, 0.08);
+    --header-bg: #ffffff;
+
+    /* SPACING */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 40px;
+    --space-8: 48px;
+    --space-9: 60px;
+    --space-10: 80px;
+
+    /* FONT SIZES */
+    --fs-xs: 10px;
+    --fs-sm: 14px;
+    --fs-md: 16px;
+    --fs-lg: 1rem;
+    --fs-xl: 2rem;
+    --fs-xxl: 4rem;
+
+    /* RADII */
+    --radius-pill: 50px;
+    --radius-lg: 30px;
+    --radius-md: 24px;
+    --radius-sm: 12px;
+
+    /* BLUR */
+    --blur-hero: blur(24px) saturate(1.2);
+    --blur-footer: blur(22px) saturate(1.2);
+
+    /* SHADOW */
+    --glass-shadow: 0 10px 40px rgba(15, 18, 34, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow-x: hidden;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: sf-pro, sans-serif;
+}
+
+@font-face {
+    font-family: sf-pro;
+    src: url(../fonts/SF-PRO.TTF);
+}
+
+#main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4);
+    background-color: #f3f3f3;
+    gap: 10px;
+}
+
+.header .nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    margin-left: 0;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    backdrop-filter: var(--blur-hero);
+}
+
+.header .nav a {
+    color: var(--color-text);
+    font-size: var(--fs-md);
+    opacity: 0.9;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.header .nav a:hover {
+    color: var(--color-primary);
+    opacity: 1;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.signin {
+    margin-right: 30px;
+}
+
+.signin a {
+    color: var(--color-text);
+    font-size: var(--fs-md);
+    font-weight: 600;
+    opacity: 0.9;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.signin a:hover {
+    color: var(--color-primary);
+    opacity: 1;
+}
+
+.register {
+    margin-right: 20px;
+}
+
+.register a {
+    color: var(--color-text);
+    font-size: var(--fs-md);
+    font-weight: 600;
+    opacity: 0.9;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.register a:hover {
+    color: var(--color-primary);
+    opacity: 1;
+}
+
+/* DASHBOARD CONTAINER */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-10) var(--space-5);
+    min-height: calc(100vh - 200px);
+}
+
+.dashboard-content h1 {
+    font-size: var(--fs-xxl);
+    color: var(--color-text);
+    margin-bottom: var(--space-2);
+}
+
+.dashboard-content > p {
+    font-size: var(--fs-md);
+    opacity: 0.8;
+    margin-bottom: var(--space-8);
+}
+
+/* DASHBOARD GRID */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-5);
+    margin-bottom: var(--space-10);
+}
+
+.dashboard-card {
+    background: white;
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 12px rgba(15, 18, 34, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(15, 18, 34, 0.12);
+}
+
+.dashboard-card h3 {
+    font-size: var(--fs-md);
+    opacity: 0.7;
+    margin-bottom: var(--space-3);
+    font-weight: 600;
+}
+
+.dashboard-card p {
+    font-size: var(--fs-lg);
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.status {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-pill);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+}
+
+.status.active {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+/* QUICK ACTIONS */
+.quick-actions {
+    background: white;
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 12px rgba(15, 18, 34, 0.06);
+}
+
+.quick-actions h2 {
+    font-size: var(--fs-xl);
+    margin-bottom: var(--space-5);
+    color: var(--color-text);
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-4);
+}
+
+.action-btn {
+    padding: var(--space-4) var(--space-6);
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: var(--fs-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: #0d3ad6;
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+.footer {
+    background-color: #0a0d14;
+    color: white;
+    padding: var(--space-10) var(--space-5);
+    margin-top: var(--space-10);
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-8);
+}
+
+.footer .col h3 {
+    margin-bottom: var(--space-4);
+    font-size: var(--fs-lg);
+}
+
+.footer .col a {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--fs-md);
+    margin-bottom: var(--space-3);
+    transition: color 0.2s ease;
+}
+
+.footer .col a:hover {
+    color: white;
+}
+
+.footer .logo-col img {
+    height: 50px;
+    margin-bottom: var(--space-3);
+}
+
+.footer .logo-col p {
+    opacity: 0.8;
+    font-size: var(--fs-md);
+}
